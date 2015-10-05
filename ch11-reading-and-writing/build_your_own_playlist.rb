@@ -1,19 +1,19 @@
 # your code here
 ## create playlist
-
+def shuffle arr
+  arr.shuffle
+end
 Dir.chdir '/home/deon/Music'
-timestamp = time.new
-timestamp.to_s!
+timestamp = Time.new
+timestamp = timestamp.to_s
 filename = "playlist - #{timestamp}.m3u"
 
-File.open filename 'w' #{}
 
-music_files = shuffle(Dir['!/**/*.{jpg,JPG,WAV,flac,FLAC,wav}'])
+music_files = shuffle(Dir['**/*.{mp3,MP3,wav,WAV,flac,FLAC}'])
 
-
-
-File.open 'playlist','w' { |f| music_files.each { |track| f.write track+"\n"
-  }
-}
+File.open filename,'w' do |f| music_files.each do |track| f.write track+"\n"
+  end
+end
 
 puts "djtango"
+
