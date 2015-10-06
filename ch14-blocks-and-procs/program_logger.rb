@@ -1,3 +1,5 @@
 def log desc, &block
-  # your code here
+  puts "#{desc} commencing"
+  returned = block[]
+  puts "#{desc} finished, returning #{returned}"
 end
